@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <!-- Include Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Left Side: Your Name -->
+            <div class="text-lg font-semibold text-gray-700">
+                Muhammad Abdullah Abrar
+            </div>
+                <!-- Right Side: Navigation Links -->
+                <div class="space-x-4 flex items-center">
+                    <a href="/home" class="nav-link">Home</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/services" class="nav-link">Services</a>
+                    <!-- <a href="/contact" class="btn-contact">Contact</a> -->
+                </div>
+                
+                <!-- Button: Contact -->
+                <a href="/contact" class="btn-contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container mx-auto mt-10 px-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
