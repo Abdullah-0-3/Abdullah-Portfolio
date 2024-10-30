@@ -1,13 +1,14 @@
 /* Link hover effect */
 .nav-link {
-    color: #4a4a4a; /* Default color */
+    color: #4a4a4a;
     transition: color 0.3s, border-bottom 0.3s;
     border-bottom: 2px solid transparent;
     padding: 2px 8px;
+    font-size: 1.25rem; /* Larger font size */
 }
 
 .nav-link:hover {
-    color: #38bdf8; /* Skyblue hover color */
+    color: #38bdf8;
     border-bottom: 2px solid #38bdf8;
 }
 
@@ -18,28 +19,29 @@
     border-radius: 8px;
     padding: 4px 16px;
     transition: color 0.3s, background-color 0.3s;
+    font-size: 1.25rem;
 }
 
 .btn-contact:hover {
     color: #38bdf8;
-    background-color: #e0f7ff; /* Light skyblue background */
+    background-color: #e0f7ff;
 }
 
-/* Profile picture border animation */
-.border-animation {
+/* Profile picture border animation - Larger Image */
+.border-animation-large {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 250px; /* Slightly larger width */
+    height: 250px; /* Slightly larger height */
     margin: 0 auto;
 }
 
-.border-animation img {
+.border-animation-large img {
     border-radius: 50%;
     width: 100%;
     height: 100%;
 }
 
-.border-animation::before {
+.border-animation-large::before {
     content: "";
     position: absolute;
     top: 0;
@@ -53,11 +55,25 @@
     animation: rotateBorder 3s linear infinite;
 }
 
+/* Border Rotation */
 @keyframes rotateBorder {
-    from {
+    0% {
         transform: rotate(0deg);
     }
-    to {
+    100% {
         transform: rotate(360deg);
+    }
+}
+
+/* Custom Font Sizes for Text Elements */
+.text-lg { font-size: 1.5rem; }      /* For "Hi, I'm" */
+.text-5xl { font-size: 3rem; color: #3fbff8;}        /* For larger name size */
+.text-xl { font-size: 2.25rem; color: #3fbff8;}       /* For skills text */
+
+/* Responsive Navigation for Mobile */
+@media (max-width: 768px) {
+    .nav-link,
+    .btn-contact {
+        font-size: 1rem;
     }
 }
