@@ -27,7 +27,7 @@
                 </button>
             </div>
             <!-- Right Side: Navigation Links -->
-            <div class="md:flex space-x-4 items-center" id="nav-menu">
+            <div class="md:flex space-x-4 items-center hidden md:block" id="nav-menu">
                 <a href="/home" class="nav-link" id="home-link">Home</a>
                 <a href="/about" class="nav-link" id="about-link">About</a>
                 <a href="/services" class="nav-link" id="services-link">Services</a>
@@ -45,12 +45,15 @@
     <script>
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
+        const mobileNavMenu = document.getElementById('mobile-nav-menu');
+
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('hidden');
+            mobileNavMenu.classList.toggle('hidden'); // Toggle the mobile nav menu
         });
 
         // Highlight Active Link
-        const links = document.querySelectorAll('.nav-link');
+        const links = document.querySelectorAll('.nav-link, .nav-link-mobile');
         links.forEach(link => {
             if (link.href === window.location.href) {
                 link.classList.add('active-nav-link'); // Add class to highlight the current page link
