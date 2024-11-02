@@ -5,111 +5,53 @@
 {% endblock %}
 
 {% block content %}
-
-<h1 class="text-6xl font-bold text-center mt-10">Services</h1> 
-
-<!-- Services Section -->
-<div class="container mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Box 1 -->
-    <div class="p-6 border-2 border-sky-500 text-white rounded-lg">
-        <h2 class="text-abdullah font-bold text-sky-500 mb-4">DevOps Engineer</h2>
-        <ul class="list-disc pl-6">
-            <li>
-                <b class="text-lg">Automation</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li>
-                <b class="text-lg">Containerization</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li>
-                <b class="text-lg">CI/CD Pipelines</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li>
-                <b class="text-lg">Cloud Integreation</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-        </ul>
+<div class="py-8 flex flex-col items-center justify-center">
+    <!-- Section Title -->
+    <div class="text-sky-500 text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+        What I Do?
     </div>
-    
-    <!-- Box 2 -->
-    <div class="p-6 border-2 border-sky-500 text-white rounded-lg">
-        <h2 class="text-abdullah font-bold text-sky-500 mb-4">System Administrator</h2>
-        <ul class="list-disc pl-6">
-            <li>
-                <b class="text-lg">System Administration & Security</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li>
-                <b class="text-lg">Networking</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li>
-                <b class="text-lg">Database administration</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    
-    <!-- Box 3 -->
-    <div class="p-6 border-2 border-sky-500 text-white rounded-lg">
-        <h2 class="text-abdullah font-bold text-sky-500 mb-4">Python Developer</h2>
-        <ul class="list-disc pl-6">
-            <li>
-                <b class="text-lg">Python Automation & Scripting</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li>
-                <b class="text-lg">Data Science</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-            <li>
-                <b class="text-lg">Python Libraries</b>
-                <br>
-                <ul class="list-disc pl-6">
-                    <li></li>
-                    <li></li>
-                </ul>
-            </li>
-        </ul>
+
+    <!-- Services Grid with wider boxes -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-12 w-full md:w-3/4">
+
+        <!-- Service 1 -->
+        <div class="bg-black border-2 border-sky-500 p-10 rounded-lg hover:shadow-xl transition-shadow duration-300">
+            <h3 class="text-abdullah sm:text-3xl md:text-4xl text-sky-500 font-semibold mb-6">DevOps Engineering</h3>
+            <ul class="list-disc text-gray-300 text-lg md:text-xl pl-5 space-y-2">
+                <li>I create tools and processes to help developers work faster and better.</li>
+                <li>I make sure that the apps and services you use are always up and running.</li>
+                <li>By automating tasks, I help computers work together smoothly.</li>
+            </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-black border-2 border-sky-500 p-10 rounded-lg hover:shadow-xl transition-shadow duration-300">
+            <h3 class="text-abdullah sm:text-3xl md:text-4xl text-sky-500 font-semibold mb-6">System Administration</h3>
+            <ul class="list-disc text-gray-300 text-lg md:text-xl pl-5 space-y-2">
+                <li>I manage and monitor computer systems to make sure they stay secure and fast.</li>
+                <li>I fix problems when servers go down or run slowly.</li>
+                <li>By keeping systems updated, I protect them from hackers and other threats.</li>
+            </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-black border-2 border-sky-500 p-10 rounded-lg hover:shadow-xl transition-shadow duration-300">
+            <h3 class="text-abdullah sm:text-3xl md:text-4xl text-sky-500 font-semibold mb-6">Python Development</h3>
+            <ul class="list-disc text-gray-300 text-lg md:text-xl pl-5 space-y-2">
+                <li>I write Python code to solve problems, automate tasks, and build web apps.</li>
+                <li>I work on both small and big projects, helping to create programs that are efficient and easy to maintain.</li>
+                <li>Python helps me quickly turn ideas into real-world solutions.</li>
+            </ul>
+        </div>
+        <div class="bg-black border-2 border-sky-500 p-10 rounded-lg hover:shadow-xl transition-shadow duration-300">
+            <h3 class="text-abdullah sm:text-3xl md:text-4xl text-sky-500 font-semibold mb-6">Web Development</h3>
+            <ul class="list-disc text-gray-300 text-lg md:text-xl pl-5 space-y-2">
+                <li>I develop web applications using Python frameworks to create dynamic and interactive user experiences.</li>
+                <li>I work on projects of all sizes, focusing on building scalable and maintainable web solutions that meet client needs.</li>
+                <li>Python allows me to transform innovative concepts into functional web applications efficiently.</li>
+            </ul>
+        </div>
+
     </div>
 </div>
-
 {% endblock %}
