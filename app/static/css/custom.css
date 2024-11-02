@@ -4,6 +4,20 @@ body {
     color: #ffffff;
 }
 
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #38bdf8;
+    border-radius: 4px;
+}
+
 /* Link hover effect */
 .nav-link {
     color: #ffffff;
@@ -43,7 +57,7 @@ body {
     color: #ffffff;
     border: 2px solid #38bdf8;
     border-radius: 10px;
-    margin: auto;
+    /* margin:; */
     padding: 5px 15px;
     transition: color 0.3s, background-color 0.3s;
     font-size: 1.25rem;
@@ -88,6 +102,7 @@ body {
 .text-xl { font-size: 2.25rem; color: #3fbff8;}       /* For skills text */
 .text-abdullah { font-size: 2rem; color: skyblue;}
 .border-sky-500 { border: 3px solid skyblue; }
+.text-4xl { color: skyblue;}
 
 /* Border Rotation */
 @keyframes rotateBorder {

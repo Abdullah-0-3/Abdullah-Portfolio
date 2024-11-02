@@ -1,13 +1,98 @@
-{% extends "base.html" %}
-
-{% block title %}
-    About - Muhammad Abdullah Abrar
-{% endblock %}
-
+{% extends "base.html" %} 
+{% block title %} About - Muhammad Abdullah Abrar {% endblock %} 
 {% block content %}
 
-<div class="text-sky-500 text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-    About
-</div>
+<div class="flex flex-col items-center justify-center text-center">
+    <!-- Centered "About" Title -->
+    <div class="text-sky-500 text-4xl sm:text-4xl md:text-5xl font-bold mb-8">
+        About
+    </div>
+
+    <!-- Button Grid -->
+    <div class="grid grid-cols-2 gap-4 mb-8">
+        <button class="btn-links" id="btn-intro">Introduction</button>
+        <button class="btn-links" id="btn-education">Education</button>
+        <button class="btn-links" id="btn-skills">Skills</button>
+        <!-- Commented out Experience Button -->
+        <button class="btn-links" id="btn-experience">Experience</button>
+    </div>
+
+    <!-- Introduction Section -->
+    <div id="introduction" class="text-center w-full max-w-lg">
+        <h2 class="text-abdullah text-2xl font-bold mb-4">Introduction</h2>
+        <p class="mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia
+            odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Etiam
+            at risus et justo dignissim congue. Donec congue ligula sit amet
+            vestibulum gravida.
+        </p>
+        <div class="text-left">
+            <p><strong>Name:</strong> Muhammad Abdullah Abrar</p>
+            <p><strong>Age:</strong> 25</p>
+            <p><strong>Phone Number:</strong> +1234567890</p>
+            <p><strong>WhatsApp:</strong> +1234567890</p>
+            <p><strong>Email:</strong> example@gmail.com</p>
+            <p>
+                <strong>More Info:</strong> More details about me can be added here.
+            </p>
+        </div>
+    </div>
+
+    <!-- Education Section (Hidden initially, will appear on button click) -->
+    <div id="education" class="hidden text-center w-full max-w-2xl mt-8">
+        <h2 class="text-abdullah text-2xl font-bold mb-4">Education</h2>
+        <div class="py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
+
+                <!-- Education Box 1 -->
+                <div class="bg-black border-2 border-sky-500 p-10 rounded-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                    <h3 class="text-abdullah sm:text-3xl md:text-4xl text-sky-500 font-semibold mb-4">Diploma in DevOps & Cloud Advanmement</h3>
+                    <p class="text-gray-300 text-lg md:text-xl mb-4">
+                        August 2024 - Present
+                    </p>
+                    <ul class="list-disc text-gray-300 text-lg md:text-xl pl-5 space-y-2">
+                        <li>Focus on CI/CD Piplines & Automation.</li>
+                        <li>Using Docker and Kubernetes for Deployment and Cloud Services.</li>
+                    </ul>
+                </div>
+
+                <!-- Education Box 2 -->
+                <div class="bg-black border-2 border-sky-500 p-10 rounded-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                    <h3 class="text-abdullah sm:text-3xl md:text-4xl text-sky-500 font-semibold mb-4">Matric Grade - 9/10th</h3>
+                    <p class="text-gray-300 text-lg md:text-xl mb-4">
+                        OPF Boys College - 90%
+                    </p>
+                    <p class="text-gray-300 text-lg md:text-xl mb-4">
+                        2022 - 2024
+                    </p>
+                    <ul class="list-disc text-gray-300 text-lg md:text-xl pl-5 space-y-2">
+                        <li>Basic Knowledge in IT and Programming.</li>
+                        <li>Computer Hardware, Software Working with Internet Working and Protocols.</li>
+                        <li>Worked on Basic Algorithms.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for toggling sections
+        const btnIntro = document.getElementById("btn-intro");
+        const btnEducation = document.getElementById("btn-education");
+        const introductionSection = document.getElementById("introduction");
+        const educationSection = document.getElementById("education");
+
+        // Show Introduction by default, hide Education
+        btnIntro.addEventListener("click", () => {
+            introductionSection.classList.remove("hidden");
+            educationSection.classList.add("hidden");
+        });
+
+        btnEducation.addEventListener("click", () => {
+            introductionSection.classList.add("hidden");
+            educationSection.classList.remove("hidden");
+        });
+    </script>
 
 {% endblock %}
