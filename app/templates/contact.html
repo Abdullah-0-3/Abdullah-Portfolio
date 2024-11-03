@@ -34,20 +34,71 @@
 <br>
 
 <script>
-    // Show the success message when form is submitted
+    // Function to show flash messages with design enhancements
+    function flashMessage(message, type) {
+        // Remove existing flash message if any
+        removeFlashMessage();
+
+        // Create the flash message container
+        const flashDiv = document.createElement('div');
+        flashDiv.id = 'tempFlashMessage';
+        flashDiv.className = `flash-message ${type} show`;  // Add show class for animation
+        flashDiv.innerHTML = `
+            <span class="icon">${getIcon(type)}</span>
+            <span>${message}</span>
+        `;
+
+        // Add flash message to the DOM
+        document.getElementById('contactForm').insertAdjacentElement('beforebegin', flashDiv);
+
+        // Auto-hide the flash message after 5 seconds
+        setTimeout(() => removeFlashMessage(), 5000);
+    }
+
+    // Helper function to remove the flash message with fade-out effect
+    function removeFlashMessage() {
+        const flashDiv = document.getElementById('tempFlashMessage');
+        if (flashDiv) {
+            flashDiv.classList.add('fade-out'); // Add fade-out effect
+            setTimeout(() => flashDiv.remove(), 500); // Remove after fade-out
+        }
+    }
+
+    // Helper function to get icon based on type
+    function getIcon(type) {
+        if (type === 'error') return '⚠️'; // Warning icon
+        if (type === 'success') return '✅'; // Success icon
+        if (type === 'info') return 'ℹ️'; // Info icon
+        return ''; // Default: no icon
+    }
+
+    // Event listener for form submission
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
-        
-        // AJAX to prevent page reload
+
+        // Display "Hold yourself back!" message initially
+        flashMessage('Hold yourself back!', 'info');
+
+        // Perform AJAX request
         fetch("{{ url_for('main.contact') }}", {
             method: "POST",
             body: new FormData(this)
-        }).then(response => {
+        })
+        .then(response => {
+            removeFlashMessage(); // Remove initial message
             if (response.ok) {
-                document.getElementById('successMessage').classList.remove('hidden');
-                this.reset();
+                flashMessage('Message Sent Successfully!', 'success');
+                this.reset(); // Clear form on success
+            } else {
+                flashMessage('Thank You! I will contact you soon!', 'success');
             }
+        })
+        .catch(error => {
+            removeFlashMessage(); // Remove initial message
+            flashMessage('Network error. Please try again later.', 'error');
+            console.error(error);
         });
     });
 </script>
+
 {% endblock %}

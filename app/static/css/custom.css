@@ -68,6 +68,55 @@ body {
     background-color: #38bdf8;
 }
 
+/* styles.css */
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Base styles for flash messages */
+.flash-message {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    margin-top: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Types of flash messages */
+.flash-message.info { background-color: green; }   /* Yellow for info */
+.flash-message.success { background-color: skyblue; color: black;} /* Green for success */
+.flash-message.error { background-color: #dc3545; }   /* Red for error */
+
+/* Fade-in effect */
+.flash-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional fade-out effect */
+.flash-message.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Icon styling */
+.flash-message .icon {
+    margin-right: 8px;
+    font-size: 1.25em;
+}
+
+
 /* Profile picture border animation - Larger Image */
 .border-animation-large {
     position: relative;
