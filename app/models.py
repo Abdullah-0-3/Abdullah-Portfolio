@@ -1,5 +1,6 @@
 from . import db
 from datetime import datetime
+import time
 
 class ContactMessage(db.Model):
     __tablename__ = 'contact_messages'
