@@ -1,13 +1,53 @@
 {% extends "base.html" %}
 
-{% block title %}
-    Contact - Muhammad Abdullah Abrar
-{% endblock %}
+{% block title %}Contact - Muhammad Abdullah Abrar{% endblock %}
 
 {% block content %}
-
-<div class="text-sky-500 text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-    Contact
+<div class="max-w-xl mx-auto p-6 bg-gray-800 rounded-lg">
+    <h2 class="text-3xl font-bold text-sky-500 mb-6">Contact Me</h2>
+    <form id="contactForm" method="POST" action="{{ url_for('main.contact') }}">
+        <div class="mb-4">
+            <label for="name" class="block text-sky-500 font-semibold">Name</label>
+            <input type="text" id="name" name="name" class="w-full p-2 border border-sky-500 rounded bg-gray-900 text-white" required>
+        </div>
+        <div class="mb-4">
+            <label for="number" class="block text-sky-500 font-semibold">Phone Number</label>
+            <input type="text" id="number" name="number" class="w-full p-2 border border-sky-500 rounded bg-gray-900 text-white" required>
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-sky-500 font-semibold">Email</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border border-sky-500 rounded bg-gray-900 text-white" required>
+        </div>
+        <div class="mb-4">
+            <label for="subject" class="block text-sky-500 font-semibold">Subject</label>
+            <input type="text" id="subject" name="subject" class="w-full p-2 border border-sky-500 rounded bg-gray-900 text-white" required>
+        </div>
+        <div class="mb-4">
+            <label for="message" class="block text-sky-500 font-semibold">Message</label>
+            <textarea id="message" name="message" rows="6" class="w-full p-2 border border-sky-500 rounded bg-gray-900 text-white" required></textarea>
+        </div>
+        <button type="submit" class="btn-contact w-full py-2 mt-4">Send Message</button>
+    </form>
+    <div id="successMessage" class="text-green-500 mt-4 hidden">Message Sent!</div>
 </div>
+<br>
+<br>
 
+<script>
+    // Show the success message when form is submitted
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // AJAX to prevent page reload
+        fetch("{{ url_for('main.contact') }}", {
+            method: "POST",
+            body: new FormData(this)
+        }).then(response => {
+            if (response.ok) {
+                document.getElementById('successMessage').classList.remove('hidden');
+                this.reset();
+            }
+        });
+    });
+</script>
 {% endblock %}
